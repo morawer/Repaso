@@ -6,16 +6,18 @@ public class Local {
     private int metros;
     private int accesos;
 
-    public local() {
+    public Local() {
     }
+    
 
-    public local(String domicilio, int metros, int accesos) {
+    public Local(String domicilio, int metros, int accesos) {
         this.domicilio = domicilio;
         this.metros = metros;
         this.accesos = accesos;
     }
 
     public String getDomicilio() {
+        
         return domicilio;
     }
 

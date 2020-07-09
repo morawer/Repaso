@@ -1,9 +1,21 @@
 package com.itt.arte;
 
-public interface Sala {
+interface Sala {
 
-    abstract String verProgramacion() {
-        return 0;
+
+
+    abstract String verProgramacion();
+
+    abstract String verLocalidades();
+
+    abstract String verLocalidadesOcupadas();
+
+    abstract String verderLocalidad(int fila, int butaca, Espectador e);
+
+    abstract String cancelarLocalidad(int fila, int butaca);
+
+    abstract String consultarLocalidad(int fila, int butaca);
+
+    abstract double calcularRecaudacion();
+
     }
-    
-}
