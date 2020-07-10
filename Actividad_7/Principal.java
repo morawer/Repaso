@@ -4,84 +4,87 @@ import com.itt.arte.*;
 
 public class Principal {
 
-              private static Scanner lector;
+     private static Scanner lector;
 
-              private static Obra obra =
+     private static Obra obra =
 
-                   new Obra("La cena de los idiotas", "Comedia", 95);
+               new Obra("La cena de los idiotas", "Comedia", 95);
 
-              private static Teatro teatro = new Teatro("C/ Sol, 45", 300, 2, obra, 30);
+     private static Teatro teatro = new Teatro("C/ Sol, 45", 300, 2, obra, 30);
 
-              public static void main(String[] args) {
+     public static void main(String[] args) {
 
-                            lector = new Scanner(System.in);
+          lector = new Scanner(System.in);
 
-                            char opc;
+          char opc;
 
-                            do {
+          do {
 
-                                         opc = mostrarMenu();
+               opc = mostrarMenu();
 
-                                         switch (opc) {
+               switch (opc) {
 
-                                                       case '1':
+                    case '1':
+                         System.out.println(obra.toString());
 
-                                                       case '2': teatro.verLocalidades();
+                    case '2':
+                         teatro.verLocalidades();
 
-                                                       case '3':
+                    case '3':
+                         teatro.verLocalidadesOcupadas();
 
-                                                       case '4':
+                    case '4':
 
-                                                       case '5':
+                    case '5':
 
-                                                       case '6':
+                    case '6':
 
-                                                       case '7':
+                    case '7':
 
-                                                       case '8':
+                    case '8':
 
-                                                       default:
+                    default:
 
-                                          }
+               }
 
-                              } while (opc!='8');
+          } while (opc != '8');
 
-                              lector.close();
+          lector.close();
 
-}
+     }
 
-public static char mostrarMenu() {
+     public static char mostrarMenu() {
 
-              String opcion;
+          String opcion;
 
-              System.out.println ("TEATRO LA BOMBILLA DE DON BLAS");
+          System.out.println("TEATRO LA BOMBILLA DE DON BLAS");
 
-              System.out.println ("------------------------------");
+          System.out.println("------------------------------");
 
-              System.out.println ("1. Ver la programación actual");
+          System.out.println("1. Ver la programación actual");
 
-              System.out.println ("2. Mostrar todas las localidades");
+          System.out.println("2. Mostrar todas las localidades");
 
-              System.out.println ("3. Mostrar localidades ocupadas");
+          System.out.println("3. Mostrar localidades ocupadas");
 
-              System.out.println ("4. Vender localidad");
+          System.out.println("4. Vender localidad");
 
-              System.out.println ("5. Cancelar localidad");
+          System.out.println("5. Cancelar localidad");
 
-              System.out.println ("6. Consultar localidad");
+          System.out.println("6. Consultar localidad");
 
-              System.out.println ("7. Calcular recaudación");
+          System.out.println("7. Calcular recaudación");
 
-              System.out.println ("8. Terminar programa");
+          System.out.println("8. Terminar programa");
 
-              System.out.println ("------------------------------");
+          System.out.println("------------------------------");
 
-              System.out.println ("¿Qué opción deseas?");
+          System.out.println("¿Qué opción deseas?");
 
-              opcion = lector.nextLine();
+          opcion = lector.nextLine();
 
-              return opcion.charAt(0); // Devuelvo el primer caracter tecleado.
+          return opcion.charAt(0); // Devuelvo el primer caracter tecleado.
 
-           }
+     }
 
 }

@@ -69,12 +69,25 @@ public class Teatro extends Local implements Sala {
     @Override
     public String verLocalidades() {
 
+        System.out.println();
+
         for (int i = 0; i < localidades.length; i++) {
 
-            for (int j = 0; i < localidades[i].length; j++) {
+            for (int j = 0; j < localidades[i].length; j++) {
 
-                System.out.print(" F: " + i + " B: " + j + " " + localidades[i][j]);
+                if (localidades[i][j] == null){
+
+                    System.out.print(" " + i + "." + j + " " + "Libre");
+                } else {
+
+                    System.out.print(" " + i + "." + j + " " + "Ocupado");
+
+                }
+
+                
             }
+
+            System.out.println();
 
         }
         return null;
@@ -83,7 +96,25 @@ public class Teatro extends Local implements Sala {
 
     @Override
     public String verLocalidadesOcupadas() {
-        // TODO Auto-generated method stub
+
+        System.out.println();
+        
+        for (int i = 0; i < localidades.length; i++) {
+
+            for (int j = 0; j < localidades[i].length; j++) {
+
+                if (localidades[i][j] != null){
+
+                    System.out.print(i + "." + j + " " + localidades[i][j].getNombre() + ", " + "tlf: " + localidades[i][j].getTlf() + ", " + "tipo: " + localidades[i][j].rangoEdad(edad) );
+
+                }
+                
+            }
+
+            System.out.println();
+
+        }
+
         return null;
     }
 
