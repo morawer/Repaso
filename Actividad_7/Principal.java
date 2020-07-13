@@ -12,11 +12,13 @@ public class Principal {
 
      private static Teatro teatro = new Teatro("C/ Sol, 45", 300, 2, obra, 30);
 
+
+
      public static void main(String[] args) {
 
           lector = new Scanner(System.in);
 
-          char opc;
+          int opc;
 
           do {
 
@@ -24,38 +26,40 @@ public class Principal {
 
                switch (opc) {
 
-                    case '1':
+                    case 1:
                          System.out.println(obra.toString());
 
-                    case '2':
+                         break;
+
+                    case 2:
                          teatro.verLocalidades();
 
-                    case '3':
+                    case 3:
                          teatro.verLocalidadesOcupadas();
 
-                    case '4':
+                    case 4:
 
-                    case '5':
+                    case 5:
 
-                    case '6':
+                    case 6:
 
-                    case '7':
+                    case 7:
 
-                    case '8':
+                    case 8:
 
                     default:
 
                }
 
-          } while (opc != '8');
+          } while (opc != 8);
 
           lector.close();
 
      }
 
-     public static char mostrarMenu() {
+     public static int mostrarMenu() {
 
-          String opcion;
+          int opcion;
 
           System.out.println("TEATRO LA BOMBILLA DE DON BLAS");
 
@@ -81,9 +85,9 @@ public class Principal {
 
           System.out.println("¿Qué opción deseas?");
 
-          opcion = lector.nextLine();
+          opcion = lector.nextInt();
 
-          return opcion.charAt(0); // Devuelvo el primer caracter tecleado.
+          return opcion;
 
      }
 

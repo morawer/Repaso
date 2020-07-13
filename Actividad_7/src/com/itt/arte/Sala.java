@@ -10,7 +10,7 @@ interface Sala {
 
     abstract String verLocalidadesOcupadas();
 
-    abstract String verderLocalidad(int fila, int butaca, Espectador e);
+    abstract String venderLocalidad(int fila, int butaca, Espectador e);
 
     abstract String cancelarLocalidad(int fila, int butaca);
 

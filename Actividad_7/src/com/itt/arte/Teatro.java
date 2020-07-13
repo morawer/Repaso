@@ -6,19 +6,17 @@ public class Teatro extends Local implements Sala {
     private double precio;
     private Espectador[][] localidades;
 
-
-
     public Teatro() {
     }
 
-    public Teatro(String domicilio, int metros, int accesos, Obra obra, double precio) {
+    public Teatro(final String domicilio, final int metros, final int accesos, final Obra obra, final double precio) {
         super(domicilio, metros, accesos);
         this.obra = obra;
         this.precio = precio;
         this.localidades = new Espectador[5][10];
     }
 
-    public Teatro(Obra obra, double precio) {
+    public Teatro(final Obra obra, final double precio) {
         this.obra = obra;
         this.precio = precio;
     }
@@ -27,7 +25,7 @@ public class Teatro extends Local implements Sala {
         return obra;
     }
 
-    public void setObra(Obra obra) {
+    public void setObra(final Obra obra) {
         this.obra = obra;
     }
 
@@ -35,7 +33,7 @@ public class Teatro extends Local implements Sala {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(final double precio) {
         this.precio = precio;
     }
 
@@ -43,7 +41,7 @@ public class Teatro extends Local implements Sala {
         return localidades;
     }
 
-    public void setLocalidades(Espectador[][] localidades) {
+    public void setLocalidades(final Espectador[][] localidades) {
         this.localidades = localidades;
     }
 
@@ -54,13 +52,13 @@ public class Teatro extends Local implements Sala {
     }
 
     @Override
-    public String cancelarLocalidad(int fila, int butaca) {
+    public String cancelarLocalidad(final int fila, final int butaca) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String consultarLocalidad(int fila, int butaca) {
+    public String consultarLocalidad(final int fila, final int butaca) {
 
         return null;
 
@@ -75,7 +73,7 @@ public class Teatro extends Local implements Sala {
 
             for (int j = 0; j < localidades[i].length; j++) {
 
-                if (localidades[i][j] == null){
+                if (localidades[i][j] == null) {
 
                     System.out.print(" " + i + "." + j + " " + "Libre");
                 } else {
@@ -84,7 +82,6 @@ public class Teatro extends Local implements Sala {
 
                 }
 
-                
             }
 
             System.out.println();
@@ -98,17 +95,18 @@ public class Teatro extends Local implements Sala {
     public String verLocalidadesOcupadas() {
 
         System.out.println();
-        
+
         for (int i = 0; i < localidades.length; i++) {
 
             for (int j = 0; j < localidades[i].length; j++) {
 
-                if (localidades[i][j] != null){
+                if (localidades[i][j] != null) {
 
-                    System.out.print(i + "." + j + " " + localidades[i][j].getNombre() + ", " + "tlf: " + localidades[i][j].getTlf() + ", " + "tipo: " + localidades[i][j].rangoEdad(edad) );
+                    System.out.print(i + "." + j + " " + localidades[i][j].getNombre() + ", " + "tlf: "
+                            + localidades[i][j].getTlf() + ", " + "tipo: " + rangoEdad(localidades[i][j].getEdad()));
 
                 }
-                
+
             }
 
             System.out.println();
@@ -118,9 +116,36 @@ public class Teatro extends Local implements Sala {
         return null;
     }
 
+    public String rangoEdad(final int edad) {
+
+        String rango = null;
+
+        if (edad >= 0 && edad <= 12) {
+
+            rango = "INFANTIL";
+
+        } else if (edad >= 13 && edad <= 17) {
+
+            rango = "MENOR";
+
+        } else if (edad >= 18 && edad <= 64) {
+
+            rango = "MAYOR";
+
+        } else if (edad >= 65) {
+
+            rango = "JUBILADO";
+        }
+
+        return rango;
+
+    }
+
     @Override
-    public String verderLocalidad(int fila, int butaca, Espectador e) {
-        // TODO Auto-generated method stub
+    public String venderLocalidad(int fila, int butaca, Espectador e) {
+
+        
+
         return null;
     }
 
@@ -129,7 +154,5 @@ public class Teatro extends Local implements Sala {
 
         return obra.toString();
     }
-
-   
 
 }

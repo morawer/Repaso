@@ -9,7 +9,7 @@ public class Espectador {
     public Espectador() {
     }
 
-    public Espectador(final String nombre, final String tlf, final int edad) {
+    public Espectador(String nombre, String tlf, int edad) {
         this.nombre = nombre;
         this.tlf = tlf;
         this.edad = edad;
@@ -19,7 +19,7 @@ public class Espectador {
         return nombre;
     }
 
-    public void setNombre(final String nombre) {
+    public void setNombre( String nombre) {
         this.nombre = nombre;
     }
 
@@ -27,7 +27,7 @@ public class Espectador {
         return tlf;
     }
 
-    public void setTlf(final String tlf) {
+    public void setTlf(String tlf) {
         this.tlf = tlf;
     }
 
@@ -35,7 +35,7 @@ public class Espectador {
         return edad;
     }
 
-    public void setEdad(final int edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
