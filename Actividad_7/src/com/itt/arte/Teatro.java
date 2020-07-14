@@ -3,7 +3,7 @@ package com.itt.arte;
 public class Teatro extends Local implements Sala {
 
     private Obra obra;
-    private double precio;
+    private double precio = 9;
     private Espectador[][] localidades;
 
     public Teatro() {
@@ -47,13 +47,11 @@ public class Teatro extends Local implements Sala {
 
     @Override
     public double calcularRecaudacion() {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
     public String cancelarLocalidad(final int fila, final int butaca) {
-        // TODO Auto-generated method stub
         return null;
     }
 
@@ -142,11 +140,14 @@ public class Teatro extends Local implements Sala {
     }
 
     @Override
-    public String venderLocalidad(int fila, int butaca, Espectador e) {
-
+    public String venderLocalidad(int fila, int butaca, Espectador e) { 
         
+        localidades [fila][butaca].setNombre(e.getNombre());
+        localidades [fila][butaca].setTlf(e.getTlf());
+        localidades [fila][butaca].setEdad(e.getEdad());
 
-        return null;
+
+        return "Registro creado";
     }
 
     @Override

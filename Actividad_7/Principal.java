@@ -12,8 +12,6 @@ public class Principal {
 
      private static Teatro teatro = new Teatro("C/ Sol, 45", 300, 2, obra, 30);
 
-
-
      public static void main(String[] args) {
 
           lector = new Scanner(System.in);
@@ -38,6 +36,41 @@ public class Principal {
                          teatro.verLocalidadesOcupadas();
 
                     case 4:
+
+                         int fila;
+                         int butaca;
+                         String nombre;
+                         String tlf;
+                         int edad;
+
+                         Scanner lector = new Scanner(System.in);
+
+                         System.out.println("¿En que fila quieres sentarte? (0-4)");
+
+                         fila = lector.nextInt();
+
+                         System.out.println("¿En que butaca quieres sentarte? (0-9)");
+
+                         butaca = lector.nextInt();
+
+                         System.out.println("¿Cual es tu numero de telefono?");
+
+                         tlf = lector.next();
+
+                         System.out.println("¿Como te llamas?");
+
+                         nombre = lector.next();
+
+                         System.out.println("¿Cual es tu edad?");
+
+                         edad = lector.nextInt();
+
+                         Espectador e = new Espectador(nombre, tlf, edad);
+
+                         System.out.println(teatro.venderLocalidad(fila, butaca, e));
+
+
+                         lector.close();
 
                     case 5:
 
