@@ -3,20 +3,20 @@ package com.itt.arte;
 public class Teatro extends Local implements Sala {
 
     private Obra obra;
-    private double precio = 9;
+    private double precio;
     private Espectador[][] localidades;
 
     public Teatro() {
     }
 
-    public Teatro(final String domicilio, final int metros, final int accesos, final Obra obra, final double precio) {
+    public Teatro(String domicilio, int metros, int accesos, Obra obra, double precio) {
         super(domicilio, metros, accesos);
         this.obra = obra;
         this.precio = precio;
         this.localidades = new Espectador[5][10];
     }
 
-    public Teatro(final Obra obra, final double precio) {
+    public Teatro(Obra obra, double precio) {
         this.obra = obra;
         this.precio = precio;
     }
@@ -25,7 +25,7 @@ public class Teatro extends Local implements Sala {
         return obra;
     }
 
-    public void setObra(final Obra obra) {
+    public void setObra(Obra obra) {
         this.obra = obra;
     }
 
@@ -33,7 +33,7 @@ public class Teatro extends Local implements Sala {
         return precio;
     }
 
-    public void setPrecio(final double precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -41,7 +41,7 @@ public class Teatro extends Local implements Sala {
         return localidades;
     }
 
-    public void setLocalidades(final Espectador[][] localidades) {
+    public void setLocalidades(Espectador[][] localidades) {
         this.localidades = localidades;
     }
 
@@ -51,12 +51,12 @@ public class Teatro extends Local implements Sala {
     }
 
     @Override
-    public String cancelarLocalidad(final int fila, final int butaca) {
+    public String cancelarLocalidad(int fila, int butaca) {
         return null;
     }
 
     @Override
-    public String consultarLocalidad(final int fila, final int butaca) {
+    public String consultarLocalidad(int fila, int butaca) {
 
         return null;
 
@@ -100,7 +100,7 @@ public class Teatro extends Local implements Sala {
 
                 if (localidades[i][j] != null) {
 
-                    System.out.print(i + "." + j + " " + localidades[i][j].getNombre() + ", " + "tlf: "
+                    System.out.println(i + "." + j + " " + localidades[i][j].getNombre() + ", " + "tlf: "
                             + localidades[i][j].getTlf() + ", " + "tipo: " + rangoEdad(localidades[i][j].getEdad()));
 
                 }
@@ -140,14 +140,40 @@ public class Teatro extends Local implements Sala {
     }
 
     @Override
-    public String venderLocalidad(int fila, int butaca, Espectador e) { 
-        
-        localidades [fila][butaca].setNombre(e.getNombre());
-        localidades [fila][butaca].setTlf(e.getTlf());
-        localidades [fila][butaca].setEdad(e.getEdad());
+    public String venderLocalidad(int fila, int butaca, Espectador e) {
 
+        if (localidades[fila][butaca] == null) {
 
-        return "Registro creado";
+            if (rangoEdad(e.getEdad()) == "INFANTIL") {
+
+                precio = 9 - (9 * 0.5);
+
+            } else if (rangoEdad(e.getEdad()) == "MENOR") {
+
+                precio = 9 - (9 * 0.2);
+
+            } else if (rangoEdad(e.getEdad()) == "MAYOR") {
+
+                precio = 9;
+
+            } else if (rangoEdad(e.getEdad()) == "JUBILADO") {
+
+                precio = 9 - (9 * 0.66);
+
+            }
+
+            localidades[fila][butaca] = e;
+
+            System.out.println("La butaca ha sido reservada a " + localidades[fila][butaca].getNombre() + " por "
+                    + precio + " euros.");
+
+        } else {
+
+            System.out.println("Butaca ocupada");
+
+        }
+
+        return null;
     }
 
     @Override

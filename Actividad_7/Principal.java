@@ -32,8 +32,12 @@ public class Principal {
                     case 2:
                          teatro.verLocalidades();
 
+                         break;
+
                     case 3:
                          teatro.verLocalidadesOcupadas();
+
+                         break;
 
                     case 4:
 
@@ -67,10 +71,9 @@ public class Principal {
 
                          Espectador e = new Espectador(nombre, tlf, edad);
 
-                         System.out.println(teatro.venderLocalidad(fila, butaca, e));
+                         teatro.venderLocalidad(fila, butaca, e);
 
-
-                         lector.close();
+                         break;
 
                     case 5:
 
