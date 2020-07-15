@@ -66,11 +66,39 @@ public class Teatro extends Local implements Sala {
         }
 
         return null;
-        
+
     }
 
     @Override
     public String consultarLocalidad(int fila, int butaca) {
+
+        if (localidades[fila][butaca] != null) {
+
+            if (rangoEdad(localidades[fila][butaca].getEdad()) == "INFANTIL") {
+
+                precio = 9 - (9 * 0.5);
+
+            } else if (rangoEdad(localidades[fila][butaca].getEdad()) == "MENOR") {
+
+                precio = 9 - (9 * 0.2);
+
+            } else if (rangoEdad(localidades[fila][butaca].getEdad()) == "MAYOR") {
+
+                precio = 9;
+
+            } else if (rangoEdad(localidades[fila][butaca].getEdad()) == "JUBILADO") {
+
+                precio = 9 - (9 * 0.66);
+
+            }
+
+            System.out.println("Esta reserva esta a nombre de " + localidades[fila][butaca].getNombre() + " por " + precio + " euros.");
+
+        } else {
+
+            System.out.println("Esta butaca no tiene reserva.");
+
+        }
 
         return null;
 
