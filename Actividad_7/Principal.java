@@ -77,6 +77,18 @@ public class Principal {
 
                     case 5:
 
+                         Scanner sc = new Scanner(System.in);
+
+                         System.out.println("¿Que fila? (0-4)");
+
+                         fila = sc.nextInt();
+
+                         System.out.println("¿Que butaca? (0-9)");
+
+                         butaca = sc.nextInt();
+
+                         teatro.cancelarLocalidad(fila, butaca);
+
                     case 6:
 
                     case 7:
