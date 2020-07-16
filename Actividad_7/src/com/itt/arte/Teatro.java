@@ -47,6 +47,48 @@ public class Teatro extends Local implements Sala {
 
     @Override
     public double calcularRecaudacion() {
+
+        System.out.println();
+
+        double recaudacion = 0;
+
+        for (int i = 0; i < localidades.length; i++) {
+
+            for (int j = 0; j < localidades[i].length; j++) {
+
+                if (localidades[i][j] != null) {
+
+                    if (rangoEdad(localidades[i][j].getEdad()) == "INFANTIL") {
+
+                        precio = 9 - (9 * 0.5);
+
+                        recaudacion += precio;
+
+                    } else if (rangoEdad(localidades[i][j].getEdad()) == "MENOR") {
+
+                        precio = 9 - (9 * 0.2);
+                        recaudacion += precio;
+
+                    } else if (rangoEdad(localidades[i][j].getEdad()) == "MAYOR") {
+
+                        precio = 9;
+                        recaudacion += precio;
+
+                    } else if (rangoEdad(localidades[i][j].getEdad()) == "JUBILADO") {
+
+                        precio = 9 - (9 * 0.66);
+                        recaudacion += precio;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        System.out.println("La recaudacion es de: " + recaudacion + " euros.");
+
         return 0;
     }
 
@@ -92,7 +134,8 @@ public class Teatro extends Local implements Sala {
 
             }
 
-            System.out.println("Esta reserva esta a nombre de " + localidades[fila][butaca].getNombre() + " por " + precio + " euros.");
+            System.out.println("La reserva esta a nombre de " + localidades[fila][butaca].getNombre() + " por "
+                    + precio + " euros.");
 
         } else {
 

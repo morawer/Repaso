@@ -98,12 +98,14 @@ public class Principal {
                          System.out.println("¿Que butaca? (0-9)");
 
                          butaca = sc1.nextInt();
-                         
+
                          teatro.consultarLocalidad(fila, butaca);
 
                     case 7:
+                         teatro.calcularRecaudacion();
 
                     case 8:
+                         System.out.println("Hasta pronto.");
 
                     default:
 
