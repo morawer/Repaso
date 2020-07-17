@@ -44,7 +44,4 @@ public class Obra {
         return "Obra [genero=" + genero + ", minutosDuracion=" + minutosDuracion + ", titulo=" + titulo + "]";
     }
 
-    
-    
-    
 }

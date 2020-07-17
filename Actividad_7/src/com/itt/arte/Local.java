@@ -8,7 +8,6 @@ public class Local {
 
     public Local() {
     }
-    
 
     public Local(String domicilio, int metros, int accesos) {
         this.domicilio = domicilio;
@@ -17,7 +16,7 @@ public class Local {
     }
 
     public String getDomicilio() {
-        
+
         return domicilio;
     }
 
@@ -46,7 +45,4 @@ public class Local {
         return "local [accesos=" + accesos + ", domicilio=" + domicilio + ", metros=" + metros + "]";
     }
 
-    
-    
-    
 }

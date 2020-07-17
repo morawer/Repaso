@@ -134,8 +134,8 @@ public class Teatro extends Local implements Sala {
 
             }
 
-            System.out.println("La reserva esta a nombre de " + localidades[fila][butaca].getNombre() + " por "
-                    + precio + " euros.");
+            System.out.println("La reserva esta a nombre de " + localidades[fila][butaca].getNombre() + " por " + precio
+                    + " euros.");
 
         } else {
 

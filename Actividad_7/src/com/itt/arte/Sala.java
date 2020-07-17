@@ -2,8 +2,6 @@ package com.itt.arte;
 
 interface Sala {
 
-
-
     abstract String verProgramacion();
 
     abstract String verLocalidades();
@@ -18,4 +16,4 @@ interface Sala {
 
     abstract double calcularRecaudacion();
 
-    }
+}
